@@ -1,42 +1,13 @@
-var siteList = [];
-var shorts = [
-  'bit.do',
-  't.co',
-  'lnkd.in',
-  'db.tt',
-  'qr.ae',
-  'adf.ly',
-  'goo.gl',
-  'bit.ly',
-  'cur.lv',
-  'tinyurl.com',
-  'ow.ly',
-  'ht.ly',
-  'ity.im',
-  'q.gs',
-  'is.gd',
-  'po.st',
-  'bc.vc',
-  'u.to',
-  'j.mp',
-  'buzurl.com',
-  'cutt.us',
-  'u.bb',
-  'x.co',
-  'scrnch.me',
-  'vzturl.com',
-  'qr.net',
-  '1url.com',
-  'tweez.me',
-  'v.gd',
-  'tr.im',
-  'trib.al',
-  'zip.net',
-  '➡.ws',
-  '✩.ws'
-];
-var toExpand = [];
-var expanded = [];
+var expanded = {};
+    siteList = [];
+    shortened = '';
+    shorts = ["✩.ws", "➡.ws", "1url.com", "adf.ly", "bc.vc", "bit.do", "bit.ly",
+              "buzurl.com", "cur.lv", "cutt.us", "db.tt", "goo.gl", "ht.ly",
+              "is.gd", "ity.im", "j.mp", "lnkd.in", "ow.ly", "po.st", "q.gs",
+              "qr.ae", "qr.net", "scrnch.me", "t.co", "tinyurl.com", "tr.im",
+              "trib.al", "tweez.me", "u.bb", "u.to", "v.gd", "vzturl.com",
+              "x.co", "zip.net"];
+    unshortened = {};
 
 function xhReq(url, callback) {
   var xhr = new XMLHttpRequest();
@@ -50,32 +21,30 @@ function xhReq(url, callback) {
   xhr.send(null);
 }
 
-xhReq(chrome.extension.getURL("/data/data.json"), function(file){
-  siteList = JSON.parse(file);
-});
-
-function expandLinks() {
-  toExpand = request.shortLinks.split(',');
-  alert('incoming data: ' + toExpand);
-  $.each(toExpand, function(index, url) {
-    // console.log('url to expand: ' + url);
-    var expandThis = 'https://unshorten.me/json/' + url;
-    // console.log('api call: ' + expandThis)
-    xhReq(expandThis, function(response) {
-      expanded.push(response);
-      // console.log('api response: ' + response);
-    });
+function unshorten(url) {
+  var toExpand = 'https://unshorten.me/json/' + url;
+  xhReq(toExpand, function(response) {
+    expanded = response;
   });
+  unshortened.push(expanded);
+  alert(expanded);
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   switch(request.operation) {
     case 'passData':
+      xhReq(chrome.extension.getURL("/data/data.json"), function(file){
+        siteList = JSON.parse(file);
+      });
       sendResponse({sites: siteList, shorteners: shorts});
       break;
-    case 'expandLink':
-      expandLinks();
-      sendResponse({expandedLinks: expanded});
+    case 'expandLinks':
+      shortened = request.shortLinks;
+      alert(shortened);
+      $.each(shortened, function(index, url) {
+        unshorten(url);
+      })
+      sendResponse({expandedLinks: unshortened});
       break;
   }
 });
