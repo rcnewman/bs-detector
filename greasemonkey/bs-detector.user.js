@@ -174,8 +174,11 @@ $(document).ready(function() {
   function warningMsg() {
     var classType = '';
     switch (dataType) {
-      case 'bias':
-        classType = 'Extreme Bias';
+      case 'rbias':
+        classType = 'Right Bias';
+        break;
+      case 'lbias':
+        classType = 'Left Bias';
         break;
       case 'conspiracy':
         classType = 'Conspiracy Theory';
