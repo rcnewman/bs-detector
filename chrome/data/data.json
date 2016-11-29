@@ -58,7 +58,6 @@
   {"url": "blacklistednews.com", "type": ""},
   {"url": "bluenationreview.com", "type": ""},
   {"url": "borowitzreport.com", "type": "satire"},
-  {"url": "breitbart.com", "type": ""},
   {"url": "buzzfeedusa.com", "type": "fake"},
   {"url": "bvanews.com", "type": ""},
   {"url": "callthecops.net", "type": ""},
@@ -108,7 +107,6 @@
   {"url": "dailypoliticsusa.com", "type": ""},
   {"url": "dailysquib.co.uk", "type": ""},
   {"url": "dailystormer.com", "type": ""},
-  {"url": "dailywire.com", "type": "bias"},
   {"url": "darkmoon.me", "type": ""},
   {"url": "darkpolitricks.com", "type": ""},
   {"url": "davidduke.com", "type": "hate"},
@@ -523,8 +521,6 @@
   {"url": "whatreallyhappened.com", "type": ""},
   {"url": "whydontyoutrythis.com", "type": ""},
   {"url": "wideawakeamerica.com", "type": ""},
-  {"url": "wikileaks.com", "type": "rumors"},
-  {"url": "wikileaks.org", "type": "rumors"},
   {"url": "wikispooks.com", "type": ""},
   {"url": "winkprogress.com", "type": ""},
   {"url": "winningdemocrats.com", "type": ""},
@@ -546,5 +542,10 @@
   {"url": "yournewswire.com", "type": ""},
   {"url": "zaytung.com", "type": ""},
   {"url": "zerohedge.com", "type": "conspiracy"},
-  {"url": "self.agency", "type": "test"}
+  {"url": "self.agency", "type": "test"},
+  {"url": "msnbc.com", "type": "bias"},
+  {"url": "cnn.com", "type": "bias"},
+  {"url": "huffingtonpost", "type": "bias"},
+  {"url": "buzzfeed.com", "type": "bias"},
+  {"url": "foxnews.com","type": "bias"}
 ]
