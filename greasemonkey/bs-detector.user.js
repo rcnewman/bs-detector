@@ -2,11 +2,11 @@
 // @name            B.S. Detector
 // @namespace       bs-detector
 // @description     Warns users about unreliable news sources.
-// @source_code     https://github.com/selfagency/bs-detector
+// @source_code     https://github.com/rcnewman/bs-detector
 // @version         0.2.3
 // @grant           GM_xmlhttpRequest
-// @updateURL       https://github.com/selfagency/bs-detector/raw/master/greasemonkey/bs-detector.user.js
-// @downloadURL     https://github.com/selfagency/bs-detector/raw/master/greasemonkey/bs-detector.user.js
+// @updateURL       https://github.com/rcnewman/bs-detector/raw/master/greasemonkey/bs-detector.user.js
+// @downloadURL     https://github.com/rcnewman/bs-detector/raw/master/greasemonkey/bs-detector.user.js
 // @require         https://raw.githubusercontent.com/selfagency/bs-detector/master/chrome/js/jquery-3.1.1.slim.min.js
 // ==/UserScript==
 
