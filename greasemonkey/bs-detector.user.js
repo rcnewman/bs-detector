@@ -20,7 +20,7 @@ $(document).ready(function() {
 
   // Constant configurations.
   // JSON Data file, whatever is latest from github.
-  var JSON_URL = '//raw.githubusercontent.com/selfagency/bs-detector/master/chrome/data/data.json';
+  var JSON_URL = '//raw.githubusercontent.com/rcnewman/bs-detector/master/chrome/data/data.json';
   var UNSHORTEN_URL = '//unshorten.me/json/';
   var CSS_FILES = [
     '//github.com/selfagency/bs-detector/raw/master/chrome/css/hint.min.css',
